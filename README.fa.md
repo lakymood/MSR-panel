@@ -10,6 +10,7 @@
 - مدیریت تاریخ انقضای سرویس
 - ساخت کاربر از طریق پنل وب
 - ساخت کاربر از طریق ربات تلگرام مدیریت
+- تعیین محدودیت اتصال همزمان برای هر کاربر (1، 2، 3، 5، 10 یا نامحدود)
 - ربات تلگرام کاربران
 - ثبت و مدیریت مصرف ترافیک
 - مدیریت وضعیت سهمیه کاربران
@@ -36,10 +37,10 @@
 
 ### نصب مستقیم
 
-دستور زیر فایل نسخه 1.1.1 را از GitHub دریافت و نصب می‌کند:
+دستور زیر فایل نسخه 1.1.3 را از GitHub دریافت و نصب می‌کند:
 
 ```bash
-wget https://github.com/lakymood/MSR-panel/releases/download/v1.1.1/msr-softether-panel_1.1.1.deb && sudo apt install -y ./msr-softether-panel_1.1.1.deb
+wget https://github.com/lakymood/MSR-panel/releases/download/v1.1.3/msr-softether-panel_1.1.3.deb && sudo apt install -y ./msr-softether-panel_1.1.3.deb
 ```
 
 ### نصب فایل محلی
@@ -47,7 +48,7 @@ wget https://github.com/lakymood/MSR-panel/releases/download/v1.1.1/msr-softethe
 اگر فایل deb را قبلاً دریافت کرده‌اید:
 
 ```bash
-sudo apt install -y ./msr-softether-panel_1.1.1.deb
+sudo apt install -y ./msr-softether-panel_1.1.3.deb
 ```
 
 ## پورت پنل وب
@@ -82,21 +83,21 @@ systemctl status softether-user-telegram-bot.service
 برای ارتقای نسخه موجود:
 
 ```bash
-sudo apt install -y ./msr-softether-panel_1.1.1.deb
+sudo apt install -y ./msr-softether-panel_1.1.3.deb
 ```
 
 ## SHA256
 
-مقدار SHA256 فایل نسخه 1.1.1:
+مقدار SHA256 فایل نسخه 1.1.3:
 
 ```text
-8bfdb4b09ce879b3c3b0b28f95e81bb91a39885d210966d7767d3afd73bd274c
+3e0640aa1e7fac117e78c19e3f0e4c56eda890280149db44a738fe053fffae5a
 ```
 
 برای بررسی فایل دانلودشده:
 
 ```bash
-sha256sum msr-softether-panel_1.1.1.deb
+sha256sum msr-softether-panel_1.1.3.deb
 ```
 
 ## اطلاعات بسته
@@ -104,7 +105,7 @@ sha256sum msr-softether-panel_1.1.1.deb
 | مورد | مقدار |
 |---|---|
 | نام بسته | msr-softether-panel |
-| نسخه | 1.1.1 |
+| نسخه | 1.1.3 |
 | معماری | all |
 | پورت پیش‌فرض پنل | 8080 |
 | نوع بسته | Debian .deb |
@@ -121,6 +122,6 @@ sha256sum msr-softether-panel_1.1.1.deb
 
 نسخه فعلی:
 
-v1.1.1
+v1.1.3
 
 فایل Debian این نسخه در بخش GitHub Releases قرار دارد.

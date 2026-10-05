@@ -11,6 +11,7 @@ Web-based management and quota control panel for SoftEther VPN.
 - Service expiration date management
 - Add users from the Web Panel
 - Add users from the Admin Telegram Bot
+- Per-user simultaneous connection limit (1, 2, 3, 5, 10, or Unlimited)
 - User Telegram Bot
 - Traffic usage tracking
 - Quota state management
@@ -38,13 +39,13 @@ Web-based management and quota control panel for SoftEther VPN.
 ### Direct Installation
 
 ```bash
-wget https://github.com/lakymood/MSR-panel/releases/download/v1.1.1/msr-softether-panel_1.1.1.deb && sudo apt install -y ./msr-softether-panel_1.1.1.deb
+wget https://github.com/lakymood/MSR-panel/releases/download/v1.1.3/msr-softether-panel_1.1.3.deb && sudo apt install -y ./msr-softether-panel_1.1.3.deb
 ```
 
 ### Local Installation
 
 ```bash
-sudo apt install -y ./msr-softether-panel_1.1.1.deb
+sudo apt install -y ./msr-softether-panel_1.1.3.deb
 ```
 
 ## Web Panel Port
@@ -75,19 +76,19 @@ systemctl status softether-user-telegram-bot.service
 ## Upgrade
 
 ```bash
-sudo apt install -y ./msr-softether-panel_1.1.1.deb
+sudo apt install -y ./msr-softether-panel_1.1.3.deb
 ```
 
 ## SHA256
 
 ```text
-8bfdb4b09ce879b3c3b0b28f95e81bb91a39885d210966d7767d3afd73bd274c
+3e0640aa1e7fac117e78c19e3f0e4c56eda890280149db44a738fe053fffae5a
 ```
 
 Verify:
 
 ```bash
-sha256sum msr-softether-panel_1.1.1.deb
+sha256sum msr-softether-panel_1.1.3.deb
 ```
 
 ## Package Information
@@ -95,7 +96,7 @@ sha256sum msr-softether-panel_1.1.1.deb
 | Item | Value |
 |---|---|
 | Package | msr-softether-panel |
-| Version | 1.1.1 |
+| Version | 1.1.3 |
 | Architecture | all |
 | Default Web Port | 8080 |
 | Package Type | Debian .deb |
@@ -112,6 +113,6 @@ sha256sum msr-softether-panel_1.1.1.deb
 
 Current release:
 
-v1.1.1
+v1.1.3
 
 The Debian package is available from the GitHub Releases section.
