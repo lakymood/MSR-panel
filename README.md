@@ -1,4 +1,5 @@
 # MSR SoftEther Panel
+[راهنمای فارسی](README.fa.md)
 
 Web-based management and quota control panel for SoftEther VPN.
 
