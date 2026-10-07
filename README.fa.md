@@ -4,24 +4,32 @@
 
 ## امکانات
 
-- پنل مدیریت وب
+- پنل مدیریت وب MSR
 - مدیریت کاربران SoftEther
-- تعیین حجم مصرفی برای هر کاربر
-- مدیریت تاریخ انقضای سرویس
 - ساخت کاربر از طریق پنل وب
 - ساخت کاربر از طریق ربات تلگرام مدیریت
-- تعیین محدودیت اتصال همزمان برای هر کاربر (1، 2، 3، 5، 10 یا نامحدود)
-- ربات تلگرام کاربران
-- ثبت و مدیریت مصرف ترافیک
-- مدیریت وضعیت سهمیه کاربران
+- تعیین حجم مصرفی برای هر کاربر
+- مدیریت تاریخ انقضای سرویس
+- افزودن روز سرویس
+- افزایش Quota کاربر
 - فعال و غیرفعال کردن کاربران
 - حذف کاربر
 - تغییر رمز عبور کاربران
+- Reset کاربر بدون تغییر مصرف قبلی
+- تعیین محدودیت اتصال همزمان برای هر کاربر
+- ربات تلگرام کاربران
+- اتصال و حذف اتصال حساب تلگرام کاربر
+- ثبت و مدیریت مصرف ترافیک
+- مدیریت وضعیت سهمیه کاربران
+- داشبورد مدیریتی با نمایش CPU، RAM، Disk و نمودار زنده شبکه
 - احراز هویت پنل مدیریت
 - محافظت CSRF برای عملیات حساس پنل
 - API پنل MSR
+- API مبتنی بر Unix Socket
 - سرویس‌ها و Timerهای مبتنی بر systemd
-- امکان تعیین پورت پنل هنگام نصب
+- امکان تعیین پورت HTTPS پنل هنگام نصب
+- حفظ تنظیمات و وضعیت سرویس‌ها هنگام Upgrade
+- مدیریت تنظیمات Apache
 
 ## نیازمندی‌ها
 
@@ -37,77 +45,77 @@
 
 ### نصب مستقیم
 
-دستور زیر فایل نسخه 1.1.3 را از GitHub دریافت و نصب می‌کند:
-
-```bash
-wget https://github.com/lakymood/MSR-panel/releases/download/v1.1.3/msr-softether-panel_1.1.3.deb && sudo apt install -y ./msr-softether-panel_1.1.3.deb
-```
+wget https://github.com/lakymood/MSR-panel/releases/download/v1.2.0/msr-softether-panel_1.2.0.deb
+sudo apt install -y ./msr-softether-panel_1.2.0.deb
 
 ### نصب فایل محلی
 
-اگر فایل deb را قبلاً دریافت کرده‌اید:
-
-```bash
-sudo apt install -y ./msr-softether-panel_1.1.3.deb
-```
+sudo apt install -y ./msr-softether-panel_1.2.0.deb
 
 ## پورت پنل وب
 
-پورت پیش‌فرض پنل:
+پورت پیش‌فرض HTTPS پنل:
 
-```text
-8080
-```
+1033
 
 پورت پنل هنگام نصب قابل تغییر است.
 
+## سرویس‌های تلگرام
+
+در نصب Fresh:
+
+- سرویس ربات تلگرام مدیریت فقط در صورت وجود Token ربات مدیریت فعال و اجرا می‌شود.
+- سرویس ربات تلگرام کاربران فقط در صورت وجود Token ربات کاربران فعال و اجرا می‌شود.
+- Timer مربوط به Notification Checker در صورت وجود Token ربات کاربران فعال و اجرا می‌شود.
+
+در زمان Upgrade، وضعیت فعلی سرویس‌های تلگرام تغییر داده نمی‌شود.
+
 ## بررسی نصب
 
-برای بررسی نسخه نصب‌شده:
-
-```bash
 dpkg -s msr-softether-panel
-```
 
 بررسی سرویس‌ها:
 
-```bash
 systemctl status msrpanel.socket
 systemctl status softether-quota.timer
 systemctl status softether-telegram-bot.service
 systemctl status softether-user-telegram-bot.service
-```
+systemctl status softether-notification-checker.timer
+
+بررسی API Socket:
+
+ls -l /run/msrpanel/api.sock
 
 ## ارتقا
 
-برای ارتقای نسخه موجود:
+sudo apt install -y ./msr-softether-panel_1.2.0.deb
 
-```bash
-sudo apt install -y ./msr-softether-panel_1.1.3.deb
-```
+تنظیمات موجود، دیتابیس سهمیه کاربران، State و اطلاعات Telegram در زمان Upgrade حفظ می‌شوند.
+
+وضعیت فعلی سرویس‌های Telegram نیز در زمان Upgrade تغییر داده نمی‌شود.
+
+## حذف
+
+sudo apt remove msr-softether-panel
+
+سرویس‌های مدیریت‌شده غیرفعال و تنظیمات سایت Apache حذف می‌شوند. تنظیمات و اطلاعات کاربران عمداً حفظ می‌شوند.
 
 ## SHA256
 
-مقدار SHA256 فایل نسخه 1.1.3:
+61cdc7529f59594df8a420b76d51d978b13b1eb1d4f93715ff062375bb471d3e
 
-```text
-3e0640aa1e7fac117e78c19e3f0e4c56eda890280149db44a738fe053fffae5a
-```
+برای بررسی فایل:
 
-برای بررسی فایل دانلودشده:
-
-```bash
-sha256sum msr-softether-panel_1.1.3.deb
-```
+sha256sum msr-softether-panel_1.2.0.deb
 
 ## اطلاعات بسته
 
 | مورد | مقدار |
 |---|---|
 | نام بسته | msr-softether-panel |
-| نسخه | 1.1.3 |
+| نسخه | 1.2.0 |
 | معماری | all |
-| پورت پیش‌فرض پنل | 8080 |
+| پورت پیش‌فرض HTTPS پنل | 1033 |
 | نوع بسته | Debian .deb |
 
 ## نکات امنیتی
@@ -122,6 +130,6 @@ sha256sum msr-softether-panel_1.1.3.deb
 
 نسخه فعلی:
 
-v1.1.3
+v1.2.0
 
-فایل Debian این نسخه در بخش GitHub Releases قرار دارد.
+فایل Debian این نسخه در بخش GitHub Releases قرار می‌گیرد.
