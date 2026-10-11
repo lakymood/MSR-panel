@@ -45,12 +45,12 @@
 
 ### نصب مستقیم
 
-wget https://github.com/lakymood/MSR-panel/releases/download/v1.2.0/msr-softether-panel_1.2.0.deb
-sudo apt install -y ./msr-softether-panel_1.2.0.deb
+wget https://github.com/lakymood/MSR-panel/releases/download/v1.2.1/msr-softether-panel_1.2.1.deb
+sudo apt install -y ./msr-softether-panel_1.2.1.deb
 
 ### نصب فایل محلی
 
-sudo apt install -y ./msr-softether-panel_1.2.0.deb
+sudo apt install -y ./msr-softether-panel_1.2.1.deb
 
 ## پورت پنل وب
 
@@ -88,7 +88,7 @@ ls -l /run/msrpanel/api.sock
 
 ## ارتقا
 
-sudo apt install -y ./msr-softether-panel_1.2.0.deb
+sudo apt install -y ./msr-softether-panel_1.2.1.deb
 
 تنظیمات موجود، دیتابیس سهمیه کاربران، State و اطلاعات Telegram در زمان Upgrade حفظ می‌شوند.
 
@@ -102,18 +102,18 @@ sudo apt remove msr-softether-panel
 
 ## SHA256
 
-61cdc7529f59594df8a420b76d51d978b13b1eb1d4f93715ff062375bb471d3e
+f1797152c0566cdc63d7f1acb5fa48d4f380f2db5a3fcd7984977c3c6e8b7cb1
 
 برای بررسی فایل:
 
-sha256sum msr-softether-panel_1.2.0.deb
+sha256sum msr-softether-panel_1.2.1.deb
 
 ## اطلاعات بسته
 
 | مورد | مقدار |
 |---|---|
 | نام بسته | msr-softether-panel |
-| نسخه | 1.2.0 |
+| نسخه | 1.2.1 |
 | معماری | all |
 | پورت پیش‌فرض HTTPS پنل | 1033 |
 | نوع بسته | Debian .deb |
@@ -130,6 +130,8 @@ sha256sum msr-softether-panel_1.2.0.deb
 
 نسخه فعلی:
 
-v1.2.0
+v1.2.1
+
+در این نسخه، توکن‌های CSRF به فرم‌های POST صفحه Telegram اضافه شده‌اند تا خطای Forbidden ناشی از نبود این توکن‌ها برطرف شود.
 
 فایل Debian این نسخه در بخش GitHub Releases قرار می‌گیرد.

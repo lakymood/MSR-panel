@@ -46,12 +46,12 @@ Web-based management and quota control panel for SoftEther VPN.
 
 ### Direct Installation
 
-wget https://github.com/lakymood/MSR-panel/releases/download/v1.2.0/msr-softether-panel_1.2.0.deb
-sudo apt install -y ./msr-softether-panel_1.2.0.deb
+wget https://github.com/lakymood/MSR-panel/releases/download/v1.2.1/msr-softether-panel_1.2.1.deb
+sudo apt install -y ./msr-softether-panel_1.2.1.deb
 
 ### Local Installation
 
-sudo apt install -y ./msr-softether-panel_1.2.0.deb
+sudo apt install -y ./msr-softether-panel_1.2.1.deb
 
 ## Web Panel Port
 
@@ -89,7 +89,7 @@ ls -l /run/msrpanel/api.sock
 
 ## Upgrade
 
-sudo apt install -y ./msr-softether-panel_1.2.0.deb
+sudo apt install -y ./msr-softether-panel_1.2.1.deb
 
 Existing configuration, quota database, state data and Telegram credentials are preserved during upgrades.
 
@@ -103,18 +103,18 @@ Managed services are disabled and the Apache site is removed. Existing configura
 
 ## SHA256
 
-61cdc7529f59594df8a420b76d51d978b13b1eb1d4f93715ff062375bb471d3e
+f1797152c0566cdc63d7f1acb5fa48d4f380f2db5a3fcd7984977c3c6e8b7cb1
 
 Verify:
 
-sha256sum msr-softether-panel_1.2.0.deb
+sha256sum msr-softether-panel_1.2.1.deb
 
 ## Package Information
 
 | Item | Value |
 |---|---|
 | Package | msr-softether-panel |
-| Version | 1.2.0 |
+| Version | 1.2.1 |
 | Architecture | all |
 | Default HTTPS Port | 1033 |
 | Package Type | Debian .deb |
@@ -129,6 +129,8 @@ sha256sum msr-softether-panel_1.2.0.deb
 
 ## Release
 
-Current release: v1.2.0
+Current release: v1.2.1
+
+This release fixes missing CSRF tokens in the Telegram page POST forms, which could cause Forbidden responses.
 
 The Debian package is available from the GitHub Releases section.
